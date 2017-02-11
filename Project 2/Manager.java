@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.LinkedHashMap;
 import java.util.Scanner;
 
 public class Manager {
@@ -33,17 +32,18 @@ public class Manager {
 			e.printStackTrace();
 		}
 
-		if (sc != null )sc.close();
 		while (sc != null &&sc.hasNextLine()){
 			String line = sc.nextLine();
 			String[] words = line.split(" ");
 			pl = new ProcessList(words);
 			sb.append(new FIFO(pl).sim());			
-			sb.append(new SJF(pl).sim());
-			sb.append(new SRT(pl).sim());
-			sb.append(new MLF(pl).sim());
+			//sb.append(new SJF(pl).sim());
+			//sb.append(new SRT(pl).sim());
+			//sb.append(new MLF(pl).sim());
 		}
 		
+		if (sc != null )sc.close();
+
 		try {
 			fw = new FileWriter(outpath);
 			bw = new BufferedWriter(fw);
