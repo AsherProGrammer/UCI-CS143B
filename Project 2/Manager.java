@@ -19,11 +19,7 @@ public class Manager {
 		System.out.println("Output to: "+ outpath);
 		sb = new StringBuilder();
 	}
-	// FIFO p queue
-	// SJF can have map<int ST, Process>
-	// SRT when process enters, compare
-	// MLF ?
-	
+
 	public void run() {
 		Scanner sc = null;
 		try {
@@ -36,10 +32,13 @@ public class Manager {
 			String line = sc.nextLine();
 			String[] words = line.split(" ");
 			pl = new ProcessList(words);
-			sb.append(new FIFO(pl).sim());			
-			//sb.append(new SJF(pl).sim());
-			//sb.append(new SRT(pl).sim());
-			//sb.append(new MLF(pl).sim());
+			sb.append(new FIFO(pl).sim());
+			pl = new ProcessList(words);
+			sb.append(new SJF(pl).sim());
+			pl = new ProcessList(words);
+			sb.append(new SRT(pl).sim());
+			pl = new ProcessList(words);
+			sb.append(new MLF(pl).sim());
 		}
 		
 		if (sc != null )sc.close();

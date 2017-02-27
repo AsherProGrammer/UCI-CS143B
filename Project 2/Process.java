@@ -1,15 +1,19 @@
 
 public class Process {
-	private int PID;
-	private int AT; //arrival time
-	private int ST; //(remaining) service time
-	private int RT; //run time
+	int PID;
+	int AT; //arrival time
+	int ST; //remaining service time
+	int RT; //run time
+	int level;
+	int time;
 	
 	public Process(int PID, int AT, int ST){
 		this.PID = PID;
 		this.AT = AT;
 		this.ST = ST;
 		this.RT = 0;
+		this.level = 5;
+		this.time = 0;
 	}
 
 	public int getPID() {
@@ -20,13 +24,15 @@ public class Process {
 		if (ST != 0){
 			this.ST--;
 			this.RT++;
+			this.time++;
 			return true;
 		}
 		return false;
 	}
 	@Override
 	public String toString() {
-		return "Process [PID=" + PID + ", AT=" + AT + ", ST=" + ST + ", RT=" + RT + "]";
+		return "\nProcess [PID=" + PID + ", AT=" + AT + ", ST=" + ST + ", RT=" + RT + ", Level=" + level
+				+ ", Time=" + time + "]";
 	}
 
 	public void setPID(int PID) {
@@ -55,5 +61,21 @@ public class Process {
 	
 	public void setRT(int RT) {
 		this.RT = RT;
+	}
+	
+	public int getLevel() {
+		return level;
+	}
+	
+	public void setLevel(int level) {
+		this.level = level;
+	}
+	
+	public int getTime() {
+		return time;
+	}
+	
+	public void setTime(int time) {
+		this.time = time;
 	}
 }
