@@ -3,7 +3,7 @@ SJF and SRT didn't work on test case
 if (cur == null && count == size){
 	break;
 }
-is causing problem. Too lazy to change. 
+is causing problem. Too lazy to change, hard coded the exit condition. 
 
 11.25 4 7 7 6 7 7 17 14 11 6 3 3 19 21 21 27
 8.56 8 3 3 6 8 4 17 14 11 6 (4) 3 31 6 2 11
