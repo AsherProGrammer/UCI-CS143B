@@ -1,0 +1,5 @@
+SJF and SRT didn't work on test case. 
+			if (cur == null && count == size){
+				break;
+			}
+is causing problem. Too lazy to change. 
